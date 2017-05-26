@@ -1,7 +1,5 @@
 class RestClient {
-    
     _url: string;
-    res: JSON;
     load: () => void; 
 
     constructor(url: string) {
@@ -12,8 +10,8 @@ class RestClient {
         var x = new XMLHttpRequest();
         x.open("GET", this._url, true);
         x.onload = () => {
-            this.res = JSON.parse(x.responseText);
-            load(this.res);
+            var r = JSON.parse(x.responseText);
+            load(r);
         }
         x.send(null);
     }
