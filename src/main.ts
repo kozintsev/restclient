@@ -1,18 +1,26 @@
 class RestClient {
+    
     _url: string;
     res: JSON;
+    load: () => void; 
+
     constructor(url: string) {
         this._url = url;
     }
 
-
-    read() {
+    read (load: (feedback : JSON)=>any ) {
         var x = new XMLHttpRequest();
         x.open("GET", this._url, true);
-        x.onload = (e: Event) => {this.res = JSON.parse(x.responseText);}
+        x.onload = () => {
+            this.res = JSON.parse(x.responseText);
+            load(this.res);
+        }
         x.send(null);
     }
 }
 
-//let rest = new RestClient("inst");
-//rest.read();
+var rest = new RestClient("/inst/");
+rest.read(function(feedback)
+{
+
+});
