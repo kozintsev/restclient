@@ -1,0 +1,25 @@
+{
+  "name": "restclient",
+  "version": "0.0.1",
+  "description": "Rest client",
+  "main": "restclient",
+  "scripts": {
+    "test": "tap src/*.js"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kozintsev/restclient.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "typescript"
+  ],
+  "author": "Oleg Kozintsev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kozintsev/restclient/issues"
+  },
+  "homepage": "https://github.com/kozintsev/restclient#readme"
+}
