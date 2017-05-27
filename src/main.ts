@@ -37,6 +37,9 @@ rest.read(function(feedback)
 
 rest = new RestClient("/inst/");
 
-var o = "{name: 1, age: 2}";
+var json = JSON.stringify({
+  name: "Виктор",
+  surname: "Цой"
+});
 
-rest.create(JSON.parse(o));
+rest.create(JSON.parse(json));
