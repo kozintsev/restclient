@@ -22,8 +22,8 @@ class RestClient {
 	    this.xhr.setRequestHeader('Content-Type', 'application/json');
 	    this.xhr.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			//alert(this.responseText);
-		    }
+                console.log(this.responseText);
+        }
 	    }
 	    this.xhr.send(params);
     }

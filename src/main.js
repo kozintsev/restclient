@@ -18,7 +18,7 @@ var RestClient = (function () {
         this.xhr.setRequestHeader('Content-Type', 'application/json');
         this.xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                //alert(this.responseText);
+                console.log(this.responseText);
             }
         };
         this.xhr.send(params);
@@ -32,6 +32,9 @@ rest.read(function (feedback) {
 
 rest = new RestClient("/inst/");
 
-var o = "{name: 1, age: 2}";
+var json = JSON.stringify({
+    name: "Виктор",
+    surname: "Цой"
+});
 
-rest.create(JSON.parse(o));
+rest.create(JSON.parse(json));
